@@ -13,7 +13,7 @@ public class Username {
     public void setUsername(String username) throws Exception {
         if(username.contains("'") || username.contains("\"") || username.contains(" ")){
             throw new Exception("Username cannot contain ', \", or Empty Spaces (use _ instead)");
-        }else if(username.equals("")) {
+        }else if(username.equals(" ")) {
             throw new Exception("Invalid Username");
         }else if(this.username.equals(username)){
             throw new Exception("Username Taken");
