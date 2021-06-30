@@ -1,4 +1,6 @@
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Username {
     private String username;
@@ -10,17 +12,20 @@ public class Username {
         return username;
     }
 
-    public void setUsername(String username) throws Exception {
-        if(username.contains("'") || username.contains("\"") || username.contains(" ")){
-            throw new Exception("Username cannot contain ', \", or Empty Spaces (use _ instead)");
-        }else if(username.equals(" ")) {
-            throw new Exception("Invalid Username");
-        }else if(this.username.equals(username)){
-            throw new Exception("Username Taken");
-        }
+    public void setUsername(String username)  {
         this.username = username;
     }
 
+    public boolean regexChecker(String theStrBeingChecked){
+        String regex = "^[A-Za-z]\\w{7,39}$";
+        Pattern checkRegex = Pattern.compile(regex);
+
+        if(theStrBeingChecked == null){
+            return false;
+        }
+        Matcher regexMatcher = checkRegex.matcher(theStrBeingChecked);
+        return regexMatcher.matches();
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
