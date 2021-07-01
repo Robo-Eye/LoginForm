@@ -26,12 +26,5 @@ public class Username {
         Matcher regexMatcher = checkRegex.matcher(theStrBeingChecked);
         return regexMatcher.matches();
     }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Username username1 = (Username) o;
-        return Objects.equals(username, username1.username);
-    }
 
 }

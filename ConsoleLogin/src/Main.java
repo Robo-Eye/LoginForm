@@ -14,5 +14,14 @@ public class Main {
 
         u.setUsername(user);
         System.out.println("Your Username Is: " + u.getUsername());
+
+
+        Password p = new Password();
+        String pass;
+        do{
+            System.out.println("Please enter a password: ");
+            pass = sc.next();
+        }while(!(p.regexChecker(pass)));
+        p.setPassword(pass);
     }
 }
