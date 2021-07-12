@@ -4,7 +4,6 @@ public class Main {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
-
         Username u = new Username();
         String user;
         do{
@@ -22,6 +21,11 @@ public class Main {
             System.out.println("Please enter a password: ");
             pass = sc.next();
         }while(!(p.regexChecker(pass)));
+
         p.setPassword(pass);
+
+
+        System.out.println("You have been logged in");
+
     }
 }
