@@ -18,7 +18,8 @@ public class Main {
         Password p = new Password();
         String pass;
         do{
-            System.out.println("Please enter a password: ");
+            System.out.println("Please enter a password (That has at LEAST one number, Lowercase Char, Uppercase Char,\n" +
+                                "Special Symbol \"@#$%\", and be between 8 and 40 characters.) : ");
             pass = sc.next();
         }while(!(p.regexChecker(pass)));
 
